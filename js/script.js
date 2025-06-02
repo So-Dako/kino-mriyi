@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Завантаження хедера
-    fetch('/navbar.html')
+    fetch('navbar.html')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
@@ -29,8 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Помилка завантаження навігації:', error));
 
-    // Завантаження футера (НОВА ЧАСТИНА)
-    fetch('/footer.html')
+    fetch('footer.html')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
@@ -42,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Помилка завантаження футера:', error));
 
-    // Логіка для кліків по картках міст
     const cityCardsContainer = document.querySelector('.city-cards-container');
     if (cityCardsContainer) {
         cityCardsContainer.addEventListener('click', function(event) {
